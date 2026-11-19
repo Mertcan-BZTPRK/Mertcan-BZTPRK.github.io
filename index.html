@@ -3,217 +3,568 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mertcan Boztoprak | MBSYS Kurucusu</title>
-<meta name="description" content="Mertcan Boztoprak - MBSYS (Meta Base Systems) kurucusu ve baş mimarı. Kurumsal yazılım mimarisi, yapay zeka entegrasyonları ve Ar-Ge.">
+<title>Mertcan Boztoprak | Yazılım Mühendisi · MBSYS Kurucusu</title>
+<meta name="description" content="Mertcan Boztoprak — Erciyes Üniversitesi Bilgisayar Mühendisliği, MBSYS (Meta Base Systems) kurucusu ve baş mimarı. Kurumsal yazılım, masaüstü uygulamalar, yapay zekâ ve IoT.">
+<meta property="og:title" content="Mertcan Boztoprak | MBSYS Kurucusu">
+<meta property="og:description" content="Kurumsal yazılım mimarisi, masaüstü ürünler, yapay zekâ ve IoT projeleri.">
+<meta name="theme-color" content="#05080d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2305080d'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='800' font-size='26' text-anchor='middle' fill='%2338d6f0'%3EMB%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
---bg:#071a21;
---bg2:#0b2530;
---card:rgba(255,255,255,0.04);
---border:rgba(255,255,255,0.09);
---text:#e6f1f4;
---muted:#8fa9b1;
---accent:#299CB1;
---accent2:#5fd0e3;
---deep:#094D63;
+--bg:#05080d;
+--bg-2:#0a0f17;
+--surface:#0d141e;
+--surface-2:#111a26;
+--line:rgba(148,190,220,.12);
+--line-2:rgba(148,190,220,.22);
+--text:#e8f0f6;
+--muted:#8a9bab;
+--dim:#5d6d7c;
+--cyan:#38d6f0;
+--teal:#299cb1;
+--violet:#8b7cf6;
+--grad:linear-gradient(120deg,#38d6f0 0%,#299cb1 45%,#8b7cf6 100%);
+--nav-h:72px;
+--radius:18px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
-body::before{content:"";position:fixed;inset:0;background:radial-gradient(circle at 15% 10%,rgba(41,156,177,0.18),transparent 45%),radial-gradient(circle at 90% 80%,rgba(9,77,99,0.35),transparent 50%);z-index:-1;pointer-events:none}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 12px)}
+body{font-family:'Inter',system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,.display{font-family:'Space Grotesk','Inter',sans-serif;letter-spacing:-.02em}
 a{color:inherit;text-decoration:none}
-.container{max-width:1080px;margin:0 auto;padding:0 24px}
-nav{position:sticky;top:0;z-index:10;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:rgba(7,26,33,0.7);border-bottom:1px solid var(--border)}
-nav .container{display:flex;justify-content:space-between;align-items:center;height:64px}
-.logo{font-family:'JetBrains Mono',monospace;font-weight:500;font-size:1.05rem}
-.logo span{color:var(--accent2)}
-.links{display:flex;gap:28px;font-size:.92rem;color:var(--muted)}
-.links a:hover{color:var(--text)}
-.nav-cta{color:var(--accent2)!important;border:1px solid rgba(95,208,227,0.35);padding:6px 14px;border-radius:8px}
-.nav-cta:hover{background:rgba(41,156,177,0.15)}
-.hero{min-height:calc(100vh - 64px);display:flex;align-items:center;padding:60px 0}
-.tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--accent2);border:1px solid rgba(95,208,227,0.3);background:rgba(41,156,177,0.08);padding:6px 14px;border-radius:999px;margin-bottom:24px}
-h1{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:800;line-height:1.1;letter-spacing:-0.02em;margin-bottom:20px}
-h1 .grad{background:linear-gradient(90deg,var(--accent2),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p{font-size:1.15rem;color:var(--muted);max-width:620px;margin-bottom:36px}
-.btns{display:flex;gap:14px;flex-wrap:wrap}
-.btn{padding:13px 26px;border-radius:10px;font-weight:600;font-size:.95rem;transition:transform .2s,box-shadow .2s,background .2s}
-.btn.primary{background:var(--accent);color:#fff}
-.btn.primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(41,156,177,0.35)}
-.btn.ghost{border:1px solid var(--border);color:var(--text)}
-.btn.ghost:hover{background:var(--card)}
-section{padding:90px 0}
-.section-title{font-size:.85rem;font-family:'JetBrains Mono',monospace;color:var(--accent2);margin-bottom:10px}
-h2{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:700;margin-bottom:40px;letter-spacing:-0.01em}
-.about{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:start}
-.about p{color:var(--muted);margin-bottom:16px;font-size:1.05rem}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.stat{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px}
-.stat b{display:block;font-size:1.05rem;margin-bottom:4px}
-.stat span{color:var(--muted);font-size:.88rem}
-.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
-.skill{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:26px}
-.skill h3{font-size:1.1rem;margin-bottom:14px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{font-family:'JetBrains Mono',monospace;font-size:.78rem;padding:5px 11px;border-radius:7px;background:rgba(41,156,177,0.12);color:var(--accent2);border:1px solid rgba(41,156,177,0.2)}
-.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
-.project{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:30px;display:flex;flex-direction:column;transition:transform .25s,border-color .25s}
-.project:hover{transform:translateY(-4px);border-color:rgba(41,156,177,0.45)}
-.project .icon{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--deep));display:grid;place-items:center;font-size:1.3rem;margin-bottom:18px}
-.project h3{font-size:1.25rem;margin-bottom:6px}
-.project .kind{font-size:.82rem;color:var(--accent2);margin-bottom:12px;font-family:'JetBrains Mono',monospace}
-.project p{color:var(--muted);font-size:.95rem;margin-bottom:20px;flex:1}
-.project .more{margin-top:18px;font-size:.9rem;font-weight:600;color:var(--accent2)}
-.project .more:hover{text-decoration:underline}
-.contact{text-align:center;background:linear-gradient(135deg,rgba(41,156,177,0.15),rgba(9,77,99,0.25));border:1px solid var(--border);border-radius:24px;padding:60px 30px}
-.contact h2{margin-bottom:14px}
-.contact p{color:var(--muted);margin-bottom:30px}
-footer{text-align:center;padding:40px 0;color:var(--muted);font-size:.85rem;border-top:1px solid var(--border)}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
-.reveal.show{opacity:1;transform:none}
-@media(max-width:760px){
-.links a:not(.nav-cta){display:none}
-.about{grid-template-columns:1fr}
-section{padding:64px 0}
+img{max-width:100%;display:block}
+.mono{font-family:'JetBrains Mono',monospace}
+.wrap{width:min(1160px,100% - 48px);margin-inline:auto}
+.bg-grid{position:fixed;inset:0;z-index:-2;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse at 50% 0%,#000 0%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 50% 0%,#000 0%,transparent 70%);opacity:.5}
+.bg-glow{position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(600px 400px at 85% 8%,rgba(56,214,240,.14),transparent 70%),radial-gradient(700px 500px at 5% 45%,rgba(139,124,246,.10),transparent 70%),radial-gradient(600px 400px at 70% 95%,rgba(41,156,177,.10),transparent 70%)}
+
+.nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:50;transition:background .3s,border-color .3s,backdrop-filter .3s;border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(5,8,13,.78);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);border-bottom-color:var(--line)}
+.nav .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:600}
+.brand-mark{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:var(--surface-2);border:1px solid var(--line-2);font-family:'Space Grotesk';font-weight:700;font-size:.9rem;position:relative;overflow:hidden}
+.brand-mark span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand-name{font-family:'Space Grotesk';font-size:1.02rem;line-height:1.15}
+.brand-name small{display:block;font-family:'JetBrains Mono';font-size:.68rem;color:var(--dim);font-weight:400;letter-spacing:.04em}
+.menu{display:flex;align-items:center;gap:4px;list-style:none}
+.menu a{display:block;padding:8px 14px;border-radius:10px;font-size:.92rem;color:var(--muted);transition:color .2s,background .2s}
+.menu a:hover{color:var(--text);background:rgba(255,255,255,.04)}
+.menu a.active{color:var(--text);background:rgba(56,214,240,.08)}
+.nav-cta{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:11px;font-size:.88rem;font-weight:600;background:var(--text);color:#05080d;transition:transform .2s,box-shadow .2s}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(56,214,240,.25)}
+.burger{display:none;width:42px;height:42px;border-radius:11px;border:1px solid var(--line-2);background:var(--surface);cursor:pointer;position:relative}
+.burger span{position:absolute;left:11px;right:11px;height:2px;background:var(--text);border-radius:2px;transition:transform .3s,opacity .3s,top .3s}
+.burger span:nth-child(1){top:14px}
+.burger span:nth-child(2){top:20px}
+.burger span:nth-child(3){top:26px}
+.nav.open .burger span:nth-child(1){top:20px;transform:rotate(45deg)}
+.nav.open .burger span:nth-child(2){opacity:0}
+.nav.open .burger span:nth-child(3){top:20px;transform:rotate(-45deg)}
+
+.hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:calc(var(--nav-h) + 40px) 0 80px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:7px 14px 7px 10px;border-radius:999px;border:1px solid var(--line-2);background:rgba(13,20,30,.7);font-size:.82rem;color:var(--muted);margin-bottom:28px}
+.pill .dot{width:8px;height:8px;border-radius:50%;background:#3ee089;box-shadow:0 0 0 4px rgba(62,224,137,.15);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(62,224,137,.05)}}
+.hero h1{font-size:clamp(2.4rem,5.2vw,4rem);line-height:1.02;font-weight:700;margin-bottom:24px}
+.hero h1 .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{font-size:clamp(1.02rem,1.6vw,1.18rem);color:var(--muted);max-width:580px;margin-bottom:36px}
+.hero p.lead b{color:var(--text);font-weight:500}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:13px;font-weight:600;font-size:.95rem;transition:transform .2s,box-shadow .2s,background .2s,border-color .2s;cursor:pointer;border:1px solid transparent}
+.btn svg{width:18px;height:18px}
+.btn-primary{background:var(--grad);color:#05080d;box-shadow:0 10px 30px -10px rgba(56,214,240,.6)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px -10px rgba(56,214,240,.7)}
+.btn-ghost{border-color:var(--line-2);background:rgba(13,20,30,.6);color:var(--text)}
+.btn-ghost:hover{border-color:rgba(56,214,240,.5);background:rgba(56,214,240,.06)}
+.hero-meta{display:flex;flex-wrap:wrap;gap:28px;margin-top:48px;padding-top:28px;border-top:1px solid var(--line)}
+.hero-meta div{font-size:.85rem;color:var(--dim)}
+.hero-meta b{display:block;font-family:'Space Grotesk';font-size:1.05rem;color:var(--text);font-weight:600}
+
+.term{background:linear-gradient(180deg,var(--surface-2),var(--surface));border:1px solid var(--line-2);border-radius:20px;overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.02) inset;position:relative}
+.term::before{content:"";position:absolute;inset:-1px;border-radius:20px;padding:1px;background:linear-gradient(140deg,rgba(56,214,240,.5),transparent 40%,transparent 60%,rgba(139,124,246,.4));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.term-bar{display:flex;align-items:center;gap:8px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.term-bar i{width:11px;height:11px;border-radius:50%;background:#2a3542}
+.term-bar i:nth-child(1){background:#ff5f57}
+.term-bar i:nth-child(2){background:#febc2e}
+.term-bar i:nth-child(3){background:#28c840}
+.term-bar span{margin-left:10px;font-family:'JetBrains Mono';font-size:.75rem;color:var(--dim)}
+.term-body{padding:22px 22px 26px;font-family:'JetBrains Mono';font-size:.84rem;line-height:1.85;min-height:300px}
+.term-body .k{color:var(--violet)}
+.term-body .s{color:#9be59b}
+.term-body .c{color:var(--dim)}
+.term-body .p{color:var(--cyan)}
+.cursor{display:inline-block;width:8px;height:1.05em;background:var(--cyan);vertical-align:-2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+section{padding:110px 0;position:relative}
+.head{margin-bottom:56px;max-width:720px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono';font-size:.78rem;color:var(--cyan);letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--cyan)}
+.head h2{font-size:clamp(2rem,4.4vw,3rem);line-height:1.1;font-weight:700;margin-bottom:14px}
+.head p{color:var(--muted);font-size:1.05rem}
+
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px}
+.card{background:linear-gradient(180deg,rgba(17,26,38,.85),rgba(13,20,30,.85));border:1px solid var(--line);border-radius:var(--radius);padding:30px;transition:border-color .3s,transform .3s}
+.card:hover{border-color:var(--line-2)}
+.about-main p{color:var(--muted);margin-bottom:16px;font-size:1.02rem}
+.about-main p b{color:var(--text);font-weight:500}
+.profile{display:flex;align-items:center;gap:18px;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.avatar{width:64px;height:64px;border-radius:18px;background:var(--grad);display:grid;place-items:center;font-family:'Space Grotesk';font-weight:700;font-size:1.35rem;color:#05080d;flex-shrink:0}
+.profile h3{font-size:1.3rem;line-height:1.2}
+.profile span{font-size:.88rem;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.tag{font-size:.82rem;padding:7px 13px;border-radius:9px;border:1px solid var(--line-2);color:var(--muted);background:rgba(255,255,255,.02)}
+.info-list{display:grid;gap:14px}
+.info{display:flex;gap:16px;align-items:flex-start;padding:20px;border-radius:14px;background:rgba(255,255,255,.02);border:1px solid var(--line)}
+.info .ic{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:rgba(56,214,240,.08);border:1px solid rgba(56,214,240,.2);flex-shrink:0;font-size:1.15rem}
+.info h4{font-size:1rem;margin-bottom:2px}
+.info p{font-size:.9rem;color:var(--muted);line-height:1.5}
+
+.stack{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.stack .card{padding:26px}
+.stack h3{font-size:1.05rem;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+.stack h3 em{font-style:normal;font-size:1.2rem}
+.stack p{font-size:.86rem;color:var(--dim);margin-bottom:18px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-family:'JetBrains Mono';font-size:.74rem;padding:5px 10px;border-radius:7px;background:rgba(56,214,240,.08);color:#9fe8f5;border:1px solid rgba(56,214,240,.16)}
+.chip.v{background:rgba(139,124,246,.1);color:#c3baff;border-color:rgba(139,124,246,.22)}
+
+.products{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
+.product{grid-column:span 2;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.product.wide{grid-column:span 3}
+.product::after{content:"";position:absolute;top:-80px;right:-80px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(56,214,240,.18),transparent 70%);opacity:0;transition:opacity .4s}
+.product:hover{transform:translateY(-5px);border-color:rgba(56,214,240,.35)}
+.product:hover::after{opacity:1}
+.p-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:22px}
+.p-icon{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:1.5rem;background:var(--surface-2);border:1px solid var(--line-2)}
+.badge{font-family:'JetBrains Mono';font-size:.7rem;padding:5px 10px;border-radius:999px;display:inline-flex;align-items:center;gap:6px}
+.badge.live{color:#7ef0b0;background:rgba(62,224,137,.08);border:1px solid rgba(62,224,137,.22)}
+.badge.live::before{content:"";width:6px;height:6px;border-radius:50%;background:#3ee089}
+.badge.priv{color:#c3baff;background:rgba(139,124,246,.08);border:1px solid rgba(139,124,246,.24)}
+.badge.edu{color:#ffd58a;background:rgba(255,190,80,.08);border:1px solid rgba(255,190,80,.24)}
+.product h3{font-size:1.32rem;margin-bottom:4px}
+.ver{font-family:'JetBrains Mono';font-size:.76rem;color:var(--dim);margin-bottom:14px}
+.product p{color:var(--muted);font-size:.94rem;flex:1;margin-bottom:22px}
+.p-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding-top:18px;border-top:1px solid var(--line)}
+.p-link{display:inline-flex;align-items:center;gap:6px;font-size:.88rem;font-weight:600;color:var(--cyan);white-space:nowrap}
+.p-link svg{width:15px;height:15px;transition:transform .2s}
+.p-link:hover svg{transform:translate(2px,-2px)}
+.p-note{font-size:.8rem;color:var(--dim);font-family:'JetBrains Mono'}
+
+.focus{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.focus .card{display:flex;gap:20px;align-items:flex-start}
+.focus .num{font-family:'JetBrains Mono';font-size:.8rem;color:var(--cyan);padding:6px 10px;border-radius:8px;border:1px solid rgba(56,214,240,.25);background:rgba(56,214,240,.06);flex-shrink:0}
+.focus h3{font-size:1.15rem;margin-bottom:6px}
+.focus p{color:var(--muted);font-size:.93rem;margin-bottom:14px}
+
+.contact-box{position:relative;border-radius:26px;padding:64px 56px;overflow:hidden;border:1px solid var(--line-2);background:radial-gradient(500px 300px at 0% 0%,rgba(56,214,240,.14),transparent 70%),radial-gradient(500px 300px at 100% 100%,rgba(139,124,246,.14),transparent 70%),var(--surface)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.contact-box h2{font-size:clamp(2rem,4.2vw,2.9rem);line-height:1.1;margin-bottom:16px}
+.contact-box > .contact-grid > div > p{color:var(--muted);margin-bottom:28px;font-size:1.04rem}
+.c-list{display:grid;gap:12px}
+.c-item{display:flex;align-items:center;gap:16px;padding:18px 20px;border-radius:15px;background:rgba(5,8,13,.55);border:1px solid var(--line);transition:border-color .25s,transform .25s,background .25s}
+.c-item:hover{border-color:rgba(56,214,240,.4);transform:translateX(4px);background:rgba(56,214,240,.04)}
+.c-item .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--surface-2);border:1px solid var(--line-2);flex-shrink:0}
+.c-item .ic svg{width:20px;height:20px}
+.c-item small{display:block;font-size:.76rem;color:var(--dim);font-family:'JetBrains Mono';letter-spacing:.03em}
+.c-item b{font-weight:600;font-size:.98rem}
+.c-item .arr{margin-left:auto;color:var(--dim);transition:color .2s}
+.c-item:hover .arr{color:var(--cyan)}
+
+footer{padding:40px 0 48px;border-top:1px solid var(--line);margin-top:40px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:.86rem;color:var(--dim)}
+footer a:hover{color:var(--text)}
+.f-links{display:flex;gap:20px}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.no-js .reveal{opacity:1;transform:none}
+
+@media (max-width:1024px){
+.stack{grid-template-columns:repeat(2,1fr)}
+.product,.product.wide{grid-column:span 3}
+}
+@media (max-width:880px){
+:root{--nav-h:66px}
+.burger{display:block}
+.nav-cta.desktop{display:none}
+.menu{position:fixed;top:var(--nav-h);left:0;right:0;flex-direction:column;align-items:stretch;gap:4px;padding:16px 24px 24px;background:rgba(5,8,13,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line);transform:translateY(-12px);opacity:0;visibility:hidden;transition:opacity .25s,transform .25s,visibility .25s}
+.nav.open .menu{opacity:1;transform:none;visibility:visible}
+.nav.open{background:rgba(5,8,13,.97)}
+.menu a{padding:14px 16px;font-size:1rem}
+.menu .mobile-cta{display:block}
+.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+.hero-grid{gap:44px}
+.focus{grid-template-columns:1fr}
+.contact-box{padding:44px 26px}
+section{padding:80px 0}
+}
+@media (min-width:881px){.menu .mobile-cta{display:none}}
+@media (max-width:640px){
+.stack{grid-template-columns:1fr}
+.products{grid-template-columns:1fr}
+.product,.product.wide{grid-column:auto}
+.term-body{font-size:.76rem;min-height:0}
+.hero-meta{gap:20px}
+.focus .card{flex-direction:column;gap:14px}
+}
+@media (prefers-reduced-motion:reduce){
+*{animation:none!important;transition:none!important}
+.reveal{opacity:1;transform:none}
+html{scroll-behavior:auto}
 }
 </style>
 </head>
-<body>
-<nav>
-<div class="container">
-<a href="#" class="logo">&lt;mertcan<span>/</span>&gt;</a>
-<div class="links">
-<a href="#hakkimda">Hakkımda</a>
-<a href="#yetenekler">Yetenekler</a>
-<a href="#projeler">Projeler</a>
-<a href="#iletisim">İletişim</a>
-<a href="https://mbsys.com.tr" target="_blank" rel="noopener" class="nav-cta">MBSYS ↗</a>
-</div>
-</div>
-</nav>
+<body class="no-js">
+<div class="bg-grid"></div>
+<div class="bg-glow"></div>
 
-<header class="hero">
-<div class="container">
-<div class="tag">👋 Merhaba, ben Mertcan Boztoprak</div>
-<h1>Kurumsal yazılım, gömülü sistemler ve<br><span class="grad">yapay zeka</span> üzerine üretiyorum.</h1>
-<p>Kayseri'de yaşıyorum. MBSYS (Meta Base Systems) adlı yazılım şirketimin kurucusu ve baş mimarıyım. Kurumsal web uygulamalarından IoT cihazlarına, görüntü işleme tabanlı yapay zeka projelerine kadar uçtan uca sistemler geliştiriyorum.</p>
-<div class="btns">
-<a href="https://mbsys.com.tr" target="_blank" rel="noopener" class="btn primary">MBSYS'i Ziyaret Et ↗</a>
-<a href="#projeler" class="btn ghost">Projelerimi Gör</a>
-<a href="https://github.com/Mertcan-BZTPRK" target="_blank" rel="noopener" class="btn ghost">GitHub</a>
-</div>
+<header class="nav" id="nav">
+<div class="wrap">
+<a href="#home" class="brand" data-link>
+<div class="brand-mark"><span>MB</span></div>
+<div class="brand-name">Mertcan Boztoprak<small>MBSYS · META BASE SYSTEMS</small></div>
+</a>
+<ul class="menu" id="menu">
+<li><a href="#home" data-link>Ana Sayfa</a></li>
+<li><a href="#hakkimda" data-link>Hakkımda</a></li>
+<li><a href="#yetenekler" data-link>Yetenekler</a></li>
+<li><a href="#urunler" data-link>Ürünler</a></li>
+<li><a href="#projeler" data-link>Projeler</a></li>
+<li><a href="#iletisim" data-link>İletişim</a></li>
+<li class="mobile-cta"><a href="https://mbsys.com.tr" target="_blank" rel="noopener">mbsys.com.tr ↗</a></li>
+</ul>
+<a href="https://mbsys.com.tr" target="_blank" rel="noopener" class="nav-cta desktop">MBSYS
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+</a>
+<button class="burger" id="burger" aria-label="Menüyü aç" aria-expanded="false"><span></span><span></span><span></span></button>
 </div>
 </header>
 
-<section id="hakkimda">
-<div class="container">
-<div class="section-title">// hakkımda</div>
-<h2>Kimim?</h2>
-<div class="about reveal">
+<main>
+<section class="hero" id="home">
+<div class="wrap hero-grid">
 <div>
-<p>Yazılım geliştiriciyim. Gerçek dünyada kullanılan, sahada çalışan sistemler kurmayı seviyorum: bir şirketin iç süreçlerini yöneten portaldan, sunucu odasındaki sıcaklığı izleyen bir mikrodenetleyiciye kadar.</p>
-<p>Bitirme projem NeuraCycle'da atıkları görüntüden sınıflandıran bir yapay zeka modeli eğitiyor, bunu mobil uygulama ve yönetim paneliyle birleştiriyorum.</p>
-<p>Kurduğum MBSYS (Meta Base Systems) ile yüksek performanslı kurumsal yazılım mimarisi, yapay zeka entegrasyonları, yeni nesil masaüstü ve bulut çözümleri ve ileri teknoloji Ar-Ge çalışmaları yapıyoruz.</p>
+<div class="pill"><span class="dot"></span>Freelance, iş birliği ve danışmanlığa açığım</div>
+<h1>Kurumsal yazılımdan <span class="g">yapay zekâ ve IoT'ye</span> uçtan uca sistemler.</h1>
+<p class="lead">Ben <b>Mertcan Boztoprak</b>. Erciyes Üniversitesi Bilgisayar Mühendisliği öğrencisiyim, <b>MBSYS (Meta Base Systems)</b>'in kurucusu ve baş mimarıyım. Meysu bünyesinde teknolojik altyapı ve dijital dönüşüm süreçlerini tasarlıyorum.</p>
+<div class="actions">
+<a href="https://mbsys.com.tr" target="_blank" rel="noopener" class="btn btn-primary">MBSYS'i Ziyaret Et
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+</a>
+<a href="#urunler" class="btn btn-ghost" data-link>Ürünlerimi Gör</a>
+<a href="#iletisim" class="btn btn-ghost" data-link>İletişime Geç</a>
 </div>
-<div class="stats">
-<div class="stat"><b>Web</b><span>.NET, Next.js, TypeScript</span></div>
-<div class="stat"><b>IoT</b><span>ESP32, sensörler, SQL</span></div>
-<div class="stat"><b>Yapay Zeka</b><span>YOLO, nesne tespiti</span></div>
-<div class="stat"><b>MBSYS</b><span>Kurucu &amp; Baş Mimar</span></div>
+<div class="hero-meta">
+<div><b>5</b>Aktif MBSYS ürünü</div>
+<div><b>Kayseri</b>Türkiye</div>
+<div><b>C# · .NET · Python</b>Ana teknolojiler</div>
+</div>
+</div>
+<div class="term">
+<div class="term-bar"><i></i><i></i><i></i><span>~/mertcan — whoami.cs</span></div>
+<div class="term-body" id="term"></div>
+</div>
+</div>
+</section>
+
+<section id="hakkimda">
+<div class="wrap">
+<div class="head reveal">
+<div class="eyebrow">Hakkımda</div>
+<h2>Kurumsal ölçekte düşünen,<br>sahada çalışan sistemler kuran bir mühendis.</h2>
+</div>
+<div class="about-grid">
+<div class="card about-main reveal">
+<div class="profile">
+<div class="avatar">MB</div>
+<div>
+<h3>Mertcan Boztoprak</h3>
+<span>Kurucu &amp; Baş Mimar · MBSYS</span>
+</div>
+</div>
+<p>Erciyes Üniversitesi Bilgisayar Mühendisliği formasyonumla <b>kurumsal ölçekli yazılım mimarileri</b> ve <b>veri odaklı uygulamalar</b> geliştiriyorum.</p>
+<p>Şu anda <b>Meysu</b> bünyesinde şirketin teknolojik altyapısını ve dijital dönüşüm süreçlerini tasarlıyorum. Bir yandan da kurduğum <b>MBSYS (Meta Base Systems)</b> çatısı altında masaüstü ürünler, yapay zekâ entegrasyonları ve Ar-Ge projeleri üretiyorum.</p>
+<p>Yazılımın yanında donanımla da uğraşıyorum. Elektronik bileşenlerle robotik ve IoT sistemleri kurmayı, boş zamanlarımda da fotoğrafçılık ve dijital konsept sanatla ilgilenmeyi seviyorum.</p>
+<div class="tags">
+<span class="tag">💼 Freelance</span>
+<span class="tag">🤝 İş birliği</span>
+<span class="tag">📱 Danışmanlık</span>
+<span class="tag">📷 Fotoğrafçılık</span>
+</div>
+</div>
+<div class="info-list">
+<div class="info reveal"><div class="ic">🎓</div><div><h4>Eğitim</h4><p>Erciyes Üniversitesi · Bilgisayar Mühendisliği</p></div></div>
+<div class="info reveal"><div class="ic">🏢</div><div><h4>Meysu</h4><p>Teknolojik altyapı ve dijital dönüşüm süreçleri, kurumsal portal ve iş akışı otomasyonları</p></div></div>
+<div class="info reveal"><div class="ic">🚀</div><div><h4>MBSYS · Meta Base Systems</h4><p>Kurucu ve baş mimar. Yüksek performanslı yazılım, yapay zekâ, masaüstü ve bulut çözümleri</p></div></div>
+<div class="info reveal"><div class="ic">🔌</div><div><h4>Donanım &amp; IoT</h4><p>ESP32 ve mikrodenetleyicilerle sensör, otomasyon ve robotik sistemler</p></div></div>
 </div>
 </div>
 </div>
 </section>
 
 <section id="yetenekler">
-<div class="container">
-<div class="section-title">// yetenekler</div>
-<h2>Kullandığım Teknolojiler</h2>
-<div class="skills reveal">
-<div class="skill">
-<h3>🌐 Backend</h3>
-<div class="chips"><span class="chip">C#</span><span class="chip">ASP.NET Core</span><span class="chip">Razor Pages</span><span class="chip">Dapper</span><span class="chip">SQL Server</span></div>
+<div class="wrap">
+<div class="head reveal">
+<div class="eyebrow">Teknik Altyapı</div>
+<h2>Kullandığım teknolojiler</h2>
+<p>Veritabanından masaüstü arayüze, mikrodenetleyiciden yapay zekâ modeline kadar katmanların hepsinde çalışıyorum.</p>
 </div>
-<div class="skill">
-<h3>🎨 Frontend</h3>
-<div class="chips"><span class="chip">Next.js</span><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Tailwind</span><span class="chip">Framer Motion</span></div>
+<div class="stack">
+<div class="card reveal">
+<h3><em>⚙️</em>Back-End</h3>
+<p>Servisler, iş mantığı, middleware</p>
+<div class="chips"><span class="chip">C#</span><span class="chip">.NET</span><span class="chip">ASP.NET Core</span><span class="chip">Java</span><span class="chip">Node.js</span><span class="chip">Python</span></div>
 </div>
-<div class="skill">
-<h3>🔌 Gömülü / IoT</h3>
-<div class="chips"><span class="chip">ESP32</span><span class="chip">Arduino</span><span class="chip">C++</span><span class="chip">Sensörler</span></div>
+<div class="card reveal">
+<h3><em>🖥️</em>Masaüstü &amp; UI</h3>
+<p>Arayüz ve kullanıcı deneyimi</p>
+<div class="chips"><span class="chip v">WPF</span><span class="chip v">Clean Architecture</span><span class="chip v">React</span><span class="chip v">JavaScript</span><span class="chip v">DevExpress</span></div>
 </div>
-<div class="skill">
-<h3>🧠 Yapay Zeka</h3>
-<div class="chips"><span class="chip">Python</span><span class="chip">YOLO</span><span class="chip">Ultralytics</span><span class="chip">Colab</span></div>
+<div class="card reveal">
+<h3><em>🗄️</em>Veri Katmanı</h3>
+<p>Veritabanı ve veri analizi</p>
+<div class="chips"><span class="chip">SQL Server</span><span class="chip">SQL</span><span class="chip">Dapper</span><span class="chip">Python Veri Analizi</span></div>
+</div>
+<div class="card reveal">
+<h3><em>🔌</em>Gömülü &amp; AI</h3>
+<p>Donanım ve yapay zekâ</p>
+<div class="chips"><span class="chip v">C / C++</span><span class="chip v">MicroPython</span><span class="chip v">ESP32</span><span class="chip v">YOLO</span></div>
 </div>
 </div>
 </div>
 </section>
 
+<section id="urunler">
+<div class="wrap">
+<div class="head reveal">
+<div class="eyebrow">MBSYS Ürün Ekosistemi</div>
+<h2>Yayındaki ürünlerim</h2>
+<p>MBSYS çatısı altında geliştirdiğim, aktif olarak kullanılan masaüstü uygulamalar. Her ürünün detay sayfası mbsys.com.tr'de.</p>
+</div>
+<div class="products">
+<article class="card product reveal">
+<div class="p-top"><div class="p-icon">📄</div><span class="badge live">Aktif</span></div>
+<h3>MBS PDF Reader</h3>
+<div class="ver">v2.0.0.2</div>
+<p>Baskıya hazır kitapçık oluşturma, yapay zekâ destekli sesli okuma (TTS), PDF birleştirme ve ayırma özelliklerini bir arada sunan, koyu temalı modern bir WPF uygulaması.</p>
+<div class="p-foot"><div class="chips"><span class="chip">C#</span><span class="chip">WPF</span><span class="chip v">AI · TTS</span></div><a class="p-link" href="https://mbsys.com.tr/products/mbs-pdf-reader" target="_blank" rel="noopener">İncele<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
+</article>
+<article class="card product reveal">
+<div class="p-top"><div class="p-icon">✉️</div><span class="badge live">Aktif</span></div>
+<h3>MBS Mailer</h3>
+<div class="ver">v2.0.0.0</div>
+<p>E-posta kampanyasının hazırlanmasından gönderimine kadar her adımı tek uygulamada toplar. Kişileri içe aktarma, kişiselleştirilmiş mesaj, gönderim kuyruğu ve canlı durum takibi sunar.</p>
+<div class="p-foot"><div class="chips"><span class="chip">C#</span><span class="chip">WPF</span></div><a class="p-link" href="https://mbsys.com.tr/products/mbs-mailer" target="_blank" rel="noopener">İncele<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
+</article>
+<article class="card product reveal">
+<div class="p-top"><div class="p-icon">🔳</div><span class="badge live">Aktif</span></div>
+<h3>MBSQR</h3>
+<div class="ver">v1.0.0.5</div>
+<p>Seri veya tekil QR kod üretimi yapabileceğin, özelleştirilebilir modern şablonlar sunan QR uygulaması. Clean Architecture ile geliştirildi.</p>
+<div class="p-foot"><div class="chips"><span class="chip">C#</span><span class="chip">WPF</span><span class="chip v">Clean Arch.</span></div><a class="p-link" href="https://mbsys.com.tr/products/mbsqr" target="_blank" rel="noopener">İncele<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
+</article>
+<article class="card product wide reveal">
+<div class="p-top"><div class="p-icon">📁</div><span class="badge live">Aktif</span></div>
+<h3>MBS Folder</h3>
+<div class="ver">v1.0.0.2</div>
+<p>Masaüstüne tek tıkla açılan kısayol menüleri ekler. Uygulamalarını, klasörlerini ve dosyalarını tek bir simgede toplayarak masaüstünü düzenli tutar.</p>
+<div class="p-foot"><div class="chips"><span class="chip">C#</span><span class="chip">WPF</span></div><a class="p-link" href="https://mbsys.com.tr/products/mbs-folder" target="_blank" rel="noopener">İncele<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
+</article>
+<article class="card product wide reveal">
+<div class="p-top"><div class="p-icon">📌</div><span class="badge live">Aktif</span></div>
+<h3>MBS PIN</h3>
+<div class="ver">v1.0.0.3</div>
+<p>Pencereleri tek tuşla diğer tüm pencerelerin üstüne sabitleyen profesyonel masaüstü aracı.</p>
+<div class="p-foot"><div class="chips"><span class="chip">C#</span><span class="chip">WPF · .NET 10</span></div><a class="p-link" href="https://mbsys.com.tr/products/mbs-pin" target="_blank" rel="noopener">İncele<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
+</article>
+</div>
+</div>
+</section>
+
 <section id="projeler">
-<div class="container">
-<div class="section-title">// projeler</div>
-<h2>Öne Çıkan Projeler</h2>
-<div class="projects">
-<div class="project reveal">
-<div class="icon">♻️</div>
+<div class="wrap">
+<div class="head reveal">
+<div class="eyebrow">Odak Projeler</div>
+<h2>Üzerinde çalıştığım projeler</h2>
+<p>Kurumsal, akademik ve kişisel projelerim. Kaynak kodları özel olduğu için ayrıntıları burada özetliyorum.</p>
+</div>
+<div class="focus">
+<div class="card reveal">
+<div class="num">01</div>
+<div>
 <h3>NeuraCycle</h3>
-<div class="kind">Bitirme Projesi · Yapay Zeka</div>
-<p>Atıkları kamera görüntüsünden otomatik sınıflandıran sistem. YOLO modelini kendim eğittim; proje mobil uygulama ve yönetim paneliyle katmanlı mimaride geliştiriliyor.</p>
-<div class="chips"><span class="chip">YOLO</span><span class="chip">Python</span><span class="chip">Mobil</span></div>
-<a href="https://github.com/Mertcan-BZTPRK/NeuraCycle" target="_blank" rel="noopener" class="more">GitHub'da incele →</a>
+<p>Bitirme projem. Atıkları kamera görüntüsünden otomatik sınıflandıran yapay zekâ sistemi. YOLO modelini kendim eğittim; mobil uygulama ve yönetim paneliyle katmanlı mimaride geliştiriliyor.</p>
+<div class="chips"><span class="chip v">YOLO</span><span class="chip v">Python</span><span class="chip">Mobil</span><span class="badge edu">Bitirme Projesi</span></div>
 </div>
-<div class="project reveal">
-<div class="icon">🏢</div>
-<h3>Kurumsal Portal</h3>
-<div class="kind">Web · .NET</div>
-<p>Bir gıda şirketi için modüler monolit mimaride kurumsal portal. Duyurular, kariyer başvuru yönetimi ve otomatik e-posta bildirimleri gibi modüller içeriyor.</p>
-<div class="chips"><span class="chip">ASP.NET Core</span><span class="chip">Dapper</span><span class="chip">SQL Server</span></div>
 </div>
-<div class="project reveal">
-<div class="icon">🌡️</div>
-<h3>Kabin İzleme Sistemi</h3>
-<div class="kind">IoT · Gömülü</div>
-<p>Sunucu kabinlerinin sıcaklık ve nemini ESP32 ile ölçüp doğrudan SQL Server'a kaydeden, eşik aşımında alarm veren ve web arayüzünden ayarlanabilen sistem.</p>
-<div class="chips"><span class="chip">ESP32</span><span class="chip">C++</span><span class="chip">SQL Server</span></div>
+<div class="card reveal">
+<div class="num">02</div>
+<div>
+<h3>MeysuDashboard &amp; Kurumsal Portal</h3>
+<p>Meysu için modüler monolit mimaride kurumsal portal: duyurular, kariyer başvuru yönetimi, otomatik e-posta bildirimleri ve iş akışı otomasyonları.</p>
+<div class="chips"><span class="chip">ASP.NET Core</span><span class="chip">Dapper</span><span class="chip">SQL Server</span><span class="badge priv">Kurumsal</span></div>
 </div>
-<div class="project reveal">
-<div class="icon">🚀</div>
-<h3>MBSYS · Meta Base Systems</h3>
-<div class="kind">Şirket · Yazılım &amp; Ar-Ge</div>
-<p>Kurucusu olduğum yazılım şirketi. Kurumsal yazılım mimarisi, yapay zeka entegrasyonları ve ileri Ar-Ge çalışmalarını birleştirerek dijital sistemler için güvenilir çözümler üretiyoruz.</p>
-<div class="chips"><span class="chip">Yazılım</span><span class="chip">Yapay Zeka</span><span class="chip">Ar-Ge</span><span class="chip">Bulut</span></div>
-<a href="https://mbsys.com.tr" target="_blank" rel="noopener" class="more">mbsys.com.tr →</a>
+</div>
+<div class="card reveal">
+<div class="num">03</div>
+<div>
+<h3>UNICEP</h3>
+<p>Kullanıcı deneyimi (UX) odaklı mobil asistan çözümü.</p>
+<div class="chips"><span class="chip v">Mobil</span><span class="chip v">UX</span><span class="badge priv">Özel Proje</span></div>
+</div>
+</div>
+<div class="card reveal">
+<div class="num">04</div>
+<div>
+<h3>MBSYS SmartHome &amp; Zemheri</h3>
+<p>IoT tabanlı donanım entegrasyonları. Elektronik bileşenler ve mikrodenetleyicilerle geliştirilen akıllı ev ve otomasyon sistemleri.</p>
+<div class="chips"><span class="chip">ESP32</span><span class="chip">C / C++</span><span class="chip">MicroPython</span><span class="badge priv">Özel Proje</span></div>
+</div>
+</div>
+<div class="card reveal">
+<div class="num">05</div>
+<div>
+<h3>Sunucu Kabini İzleme Sistemi</h3>
+<p>Kabinlerin sıcaklık ve nemini ESP32 ile ölçüp doğrudan SQL Server'a kaydeden, eşik aşımında alarm veren ve web arayüzünden yönetilen sistem.</p>
+<div class="chips"><span class="chip">ESP32</span><span class="chip">C++</span><span class="chip">SQL Server</span><span class="badge priv">Kurumsal</span></div>
+</div>
+</div>
+<div class="card reveal">
+<div class="num">06</div>
+<div>
+<h3>CRYPTAI</h3>
+<p>Python ile geliştirilen veri analizi projesi.</p>
+<div class="chips"><span class="chip v">Python</span><span class="chip v">Veri Analizi</span><span class="badge priv">Özel Proje</span></div>
+</div>
 </div>
 </div>
 </div>
 </section>
 
 <section id="iletisim">
-<div class="container">
-<div class="contact reveal">
-<div class="section-title">// iletişim</div>
-<h2>Birlikte çalışalım</h2>
-<p>Kayseri, Türkiye. Kurumsal projeler için MBSYS üzerinden, kodlarım için GitHub üzerinden ulaşabilirsin.</p>
-<div class="btns" style="justify-content:center">
-<a href="https://mbsys.com.tr" target="_blank" rel="noopener" class="btn primary">mbsys.com.tr ↗</a>
-<a href="https://github.com/Mertcan-BZTPRK" target="_blank" rel="noopener" class="btn ghost">GitHub Profilim</a>
+<div class="wrap">
+<div class="contact-box reveal">
+<div class="contact-grid">
+<div>
+<div class="eyebrow">İletişim</div>
+<h2>Bir projen mi var?<br>Konuşalım.</h2>
+<p>Ürünlerim, iş birlikleri, freelance işler veya aklındaki projeler için bana her zaman ulaşabilirsin.</p>
+<a href="mailto:info@mbsys.com.tr" class="btn btn-primary">E-posta Gönder
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="m22 6-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+</a>
+</div>
+<div class="c-list">
+<a class="c-item" href="mailto:info@mbsys.com.tr">
+<div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#38d6f0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></div>
+<div><small>E-POSTA</small><b>info@mbsys.com.tr</b></div><span class="arr">→</span>
+</a>
+<a class="c-item" href="https://www.linkedin.com/in/mertcan-boztoprak" target="_blank" rel="noopener">
+<div class="ic"><svg viewBox="0 0 24 24" fill="#38d6f0"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></div>
+<div><small>LINKEDIN</small><b>Mertcan Boztoprak</b></div><span class="arr">↗</span>
+</a>
+<a class="c-item" href="https://github.com/Mertcan-BZTPRK" target="_blank" rel="noopener">
+<div class="ic"><svg viewBox="0 0 24 24" fill="#38d6f0"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3"/></svg></div>
+<div><small>GITHUB</small><b>Mertcan-BZTPRK</b></div><span class="arr">↗</span>
+</a>
+<a class="c-item" href="https://mbsys.com.tr" target="_blank" rel="noopener">
+<div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#38d6f0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+<div><small>WEB · KAYSERİ, TÜRKİYE</small><b>mbsys.com.tr</b></div><span class="arr">↗</span>
+</a>
+</div>
 </div>
 </div>
 </div>
 </section>
+</main>
 
 <footer>
-<div class="container">© <span id="yil"></span> Mertcan Boztoprak · <a href="https://mbsys.com.tr" target="_blank" rel="noopener" style="color:var(--accent2)">MBSYS</a> · GitHub Pages ile yayınlandı</div>
+<div class="wrap">
+<div>© <span id="year"></span> Mertcan Boztoprak · <a href="https://mbsys.com.tr" target="_blank" rel="noopener">MBSYS (Meta Base Systems)</a></div>
+<div class="f-links">
+<a href="#home" data-link>Başa dön ↑</a>
+<a href="https://www.linkedin.com/in/mertcan-boztoprak" target="_blank" rel="noopener">LinkedIn</a>
+<a href="https://github.com/Mertcan-BZTPRK" target="_blank" rel="noopener">GitHub</a>
+</div>
+</div>
 </footer>
 
 <script>
-document.getElementById('yil').textContent=new Date().getFullYear();
-const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('show');io.unobserve(x.target)}}),{threshold:.12});
+document.body.classList.remove('no-js');
+document.getElementById('year').textContent=new Date().getFullYear();
+
+const nav=document.getElementById('nav');
+const burger=document.getElementById('burger');
+const menuLinks=[...document.querySelectorAll('.menu a[data-link]')];
+
+const closeMenu=()=>{nav.classList.remove('open');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Menüyü aç')};
+burger.addEventListener('click',()=>{
+const open=nav.classList.toggle('open');
+burger.setAttribute('aria-expanded',open);
+burger.setAttribute('aria-label',open?'Menüyü kapat':'Menüyü aç');
+});
+
+document.querySelectorAll('a[data-link]').forEach(a=>{
+a.addEventListener('click',e=>{
+const id=a.getAttribute('href');
+const target=document.querySelector(id);
+if(!target)return;
+e.preventDefault();
+closeMenu();
+const top=id==='#home'?0:target.getBoundingClientRect().top+window.scrollY-nav.offsetHeight-8;
+window.scrollTo({top,behavior:'smooth'});
+history.replaceState(null,'',id);
+});
+});
+
+document.addEventListener('click',e=>{if(nav.classList.contains('open')&&!nav.contains(e.target))closeMenu()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+
+const sections=[...document.querySelectorAll('main section[id]')];
+const onScroll=()=>{
+nav.classList.toggle('scrolled',window.scrollY>20);
+const y=window.scrollY+nav.offsetHeight+120;
+let current=sections[0].id;
+sections.forEach(s=>{if(s.offsetTop<=y)current=s.id});
+if(window.innerHeight+window.scrollY>=document.body.scrollHeight-4)current=sections[sections.length-1].id;
+menuLinks.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+current));
+};
+window.addEventListener('scroll',onScroll,{passive:true});
+onScroll();
+
+const io=new IntersectionObserver(entries=>entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+const lines=[
+'<span class="k">var</span> me = <span class="k">new</span> <span class="p">Engineer</span>',
+'{',
+'  Name = <span class="s">"Mertcan Boztoprak"</span>,',
+'  Role = <span class="s">"Founder &amp; Chief Architect"</span>,',
+'  Company = <span class="s">"MBSYS · Meta Base Systems"</span>,',
+'  Work = <span class="s">"Meysu · Dijital Dönüşüm"</span>,',
+'  School = <span class="s">"Erciyes Üni. · Bilg. Müh."</span>,',
+'  Stack = [<span class="s">"C#"</span>, <span class="s">".NET"</span>, <span class="s">"WPF"</span>, <span class="s">"SQL"</span>, <span class="s">"Python"</span>, <span class="s">"IoT"</span>],',
+'  City = <span class="s">"Kayseri"</span>',
+'};',
+'',
+'<span class="c">// 5 ürün yayında, yenileri yolda</span>',
+'me.<span class="p">Build</span>();'
+];
+const term=document.getElementById('term');
+let i=0;
+const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(reduce){term.innerHTML=lines.join('<br>')+'<br><span class="cursor"></span>'}
+else{
+const step=()=>{
+if(i<lines.length){term.innerHTML=lines.slice(0,i+1).join('<br>')+'<span class="cursor"></span>';i++;setTimeout(step,i===1?400:140)}
+else{term.innerHTML=lines.join('<br>')+'<br><span class="cursor"></span>'}
+};
+setTimeout(step,500);
+}
 </script>
 </body>
 </html>
